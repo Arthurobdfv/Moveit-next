@@ -3,7 +3,8 @@ import { signin, signout, useSession } from "next-auth/client";
 import styles from '../styles/components/Header.module.css'
 
 export function Header() {
-  const [session, loading] = useSession();
+  const [session, loading, redirect] = useSession();
+  const url = process.env.SITE;
 
   return (
     <header>
@@ -23,6 +24,7 @@ export function Header() {
               onClick={(e) => {
                 e.preventDefault();
                 signin();
+                redirect(url,'/');
               }}
             >
               <button className="signInButton">Sign in</button>
