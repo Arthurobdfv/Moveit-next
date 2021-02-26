@@ -1,8 +1,8 @@
-import NextAuth from 'next-auth';
+import NextAuth, { InitOptions } from 'next-auth';
 import Providers from 'next-auth/providers';
 
 const options = {
-    site: process.env.VERCEL_URL,
+    site: process.env.NEXT_PUBLIC_SITE,
     providers: [
         Providers.Google({
           clientId: process.env.GOOGLE_ID,

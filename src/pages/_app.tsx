@@ -14,11 +14,11 @@ function MyApp({ Component, pageProps }) {
   console.log(process.env.VERCEL_URL)
   return (
     <div>
-      <Provider options={{ site: process.env.VERCEL_URL }} session={session}>
+      <Provider options={{ 
+        baseUrl: process.env.SITE
+      }} session={session}>
         <Header />
-        <ChallengesProvider>
           <Component {...pageProps} />
-        </ChallengesProvider>
       </Provider>
     </div>
   );
