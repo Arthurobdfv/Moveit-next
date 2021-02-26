@@ -6,6 +6,11 @@ export function Header() {
   const [session, loading, redirect] = useSession();
   const url = process.env.SITE;
 
+  function Login(){
+    console.log(url);
+    signin(null, `https://moveit-neon.vercel.app/api/auth/callback/google`)
+  }
+
   return (
     <header>
       <nav>
@@ -21,10 +26,7 @@ export function Header() {
           {!session && (
             <a
               href="/api/auth/signin"
-              onClick={(e) => {
-                e.preventDefault();
-                signin('google', `${url}/api/auth/callback/google`);
-              }}
+              onClick={Login}
             >
               <button className="signInButton">Sign in</button>
             </a>

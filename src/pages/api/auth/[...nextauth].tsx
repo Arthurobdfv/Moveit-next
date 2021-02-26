@@ -7,6 +7,8 @@ const options = {
         Providers.Google({
           clientId: process.env.GOOGLE_ID,
           clientSecret: process.env.GOOGLE_SECRET,
+          signinUrl: `${process.env.SITE}/api/auth/signin/google`,
+          callbackUrl: `${process.env.SITE}/api/auth/callback/google`,
         }),
     ],
     database:''
