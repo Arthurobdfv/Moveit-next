@@ -11,9 +11,10 @@ function MyApp({ Component, pageProps }) {
   console.log(process.env.SITE)
   console.log(process.env.GOOGLE_ID)
   console.log(process.env.GOOGLE_SECRET)
+  console.log(process.env.VERCEL_URL)
   return (
     <div>
-      <Provider options={{ site: process.env.SITE }} session={session}>
+      <Provider options={{ site: process.env.VERCEL_URL }} session={session}>
         <Header />
         <ChallengesProvider>
           <Component {...pageProps} />

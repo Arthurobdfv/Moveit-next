@@ -4,11 +4,11 @@ import styles from '../styles/components/Header.module.css'
 
 export function Header() {
   const [session, loading, redirect] = useSession();
-  const url = process.env.SITE;
+  const url = process.env.VERCEL_URL;
 
   function Login(){
     console.log(url);
-    signin(null, `https://moveit-neon.vercel.app/api/auth/callback/google`)
+    signin(null, `${url}/api/auth/callback/google`)
   }
 
   return (
