@@ -23,8 +23,7 @@ export function Header() {
               href="/api/auth/signin"
               onClick={(e) => {
                 e.preventDefault();
-                signin();
-                redirect(url,'/');
+                signin(null, `${url}/`);
               }}
             >
               <button className="signInButton">Sign in</button>
